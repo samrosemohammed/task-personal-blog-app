@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ToggleTheme } from "./ToggleTheme";
 import { MobileNav } from "./MobileNav";
+import { Github } from "lucide-react";
 
 export const NavBar = () => {
   return (
@@ -17,6 +18,16 @@ export const NavBar = () => {
         </li>
         <li>
           <ToggleTheme />
+        </li>
+        <li>
+          <Link
+            href={"https://github.com/samrosemohammed/task-personal-blog-app"}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Repository"
+          >
+            <Github />
+          </Link>
         </li>
       </ul>
       <MobileNav />

@@ -20,8 +20,8 @@ const getData = async (blogPostId: string) => {
   }
   return postDatawithId;
 };
-const page = async (params: { params: { id: string } }) => {
-  const { id } = await params.params;
+const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
   const data = await getData(id);
   console.log("data", data);
   return (
@@ -53,4 +53,4 @@ const page = async (params: { params: { id: string } }) => {
     </MaxWidthWrapper>
   );
 };
-export default page;
+export default Page;

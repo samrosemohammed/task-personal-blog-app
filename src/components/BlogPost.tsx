@@ -8,6 +8,12 @@ import {
 } from "./ui/card";
 import { SquareArrowOutUpRight } from "lucide-react";
 
+interface BlogPostType {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
 const getData = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts");
   const postData = await response.json();
@@ -22,7 +28,7 @@ export const BlogPost = async () => {
   return (
     <div className="p-6 space-y-6">
       <div className="grid lg:grid-cols-3 gap-4">
-        {data.map((blogPost: any) => (
+        {data.map((blogPost: BlogPostType) => (
           <Card
             key={blogPost.id}
             className="hover:shadow-lg transition-shadow duration-300"

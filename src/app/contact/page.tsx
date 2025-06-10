@@ -19,7 +19,7 @@ import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
-const page = () => {
+const Page = () => {
   const {
     register,
     handleSubmit,
@@ -28,7 +28,6 @@ const page = () => {
     resolver: zodResolver(contactSchema),
   });
   const onContactSubmit = async (data: ContactSchema) => {
-    // Handle form submission logic here
     const res = await contactAction(data);
     if (res.success) {
       toast.success(res.message);
@@ -39,7 +38,10 @@ const page = () => {
       <Card className="max-w-lg mx-auto w-full shadow-lg">
         <CardHeader>
           <CardTitle className="text-xl sm:text-2xl">Contact Us</CardTitle>
-          <CardDescription>Hello from the contact page.</CardDescription>
+          <CardDescription>
+            We would love to hear from you! Please fill out the form below to
+            get in touch with us.
+          </CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit(onContactSubmit)}>
           <CardContent className="flex flex-col gap-4">
@@ -81,4 +83,4 @@ const page = () => {
     </div>
   );
 };
-export default page;
+export default Page;
