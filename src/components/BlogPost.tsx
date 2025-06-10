@@ -21,9 +21,12 @@ export const BlogPost = async () => {
   const data = await getData();
   return (
     <div className="p-6 space-y-6">
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid lg:grid-cols-3 gap-4">
         {data.map((blogPost: any) => (
-          <Card key={blogPost.id}>
+          <Card
+            key={blogPost.id}
+            className="hover:shadow-lg transition-shadow duration-300"
+          >
             <CardHeader>
               <CardTitle className="capitalize">{blogPost.title}</CardTitle>
             </CardHeader>
