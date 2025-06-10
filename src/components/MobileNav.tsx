@@ -26,8 +26,12 @@ export const MobileNav = () => {
           <Menu className="size-6" />
         </DropdownMenuTrigger>
         <DropdownMenuContent className="mt-2" align="end">
-          <DropdownMenuItem>Home</DropdownMenuItem>
-          <DropdownMenuItem>Contact</DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href={"/"}>Home</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href={"/contact"}>Contact</Link>
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>
